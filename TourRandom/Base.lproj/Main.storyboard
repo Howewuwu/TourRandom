@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7hg-qv-ynb">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="jf-jinxuan-medium.otf">
+            <string>jf-jinxuan-Medium</string>
+        </array>
+        <array key="jf-jinxuanlatte-1.0-medium.otf">
+            <string>jf-jinxuanlatte-1.0-medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TourRandom" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dpw-Wr-4Kd">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6J-Hx-aGH">
+                                        <rect key="frame" x="173" y="47" width="68" height="73"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" backgroundImage="taipeiLogo"/>
+                                        <connections>
+                                            <action selector="webButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6fx-Rp-Noh"/>
+                                            <segue destination="RwR-mB-Dl4" kind="show" id="b0R-aw-Bx5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="JzP-9Y-OqK"/>
+                                    <constraint firstAttribute="bottom" secondItem="s6J-Hx-aGH" secondAttribute="bottom" constant="20" id="PfX-PT-z1e"/>
+                                    <constraint firstItem="s6J-Hx-aGH" firstAttribute="centerX" secondItem="Dpw-Wr-4Kd" secondAttribute="centerX" id="TaO-WH-haL"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="40"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Qc-uV-uka">
+                                <rect key="frame" x="0.0" y="140" width="414" height="596"/>
+                                <subviews>
+                                    <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="NH3-vA-vcw">
+                                        <rect key="frame" x="0.0" y="20" width="414" height="1590"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXx-6H-JBW">
+                                                <rect key="frame" x="33" y="0.0" width="348" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="Z4q-yH-Lwb"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="jf-jinxuan-Medium" family="jf-jinxuan" pointSize="58"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <size key="titleShadowOffset" width="-1" height="1"/>
+                                                <state key="normal" title="臺北市" backgroundImage="101">
+                                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tourButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HQ2-qb-Qvb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xYg-iT-112">
+                                                <rect key="frame" x="33" y="180" width="348" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="4uH-o6-mwH"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="jf-jinxuan-Medium" family="jf-jinxuan" pointSize="58"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
+                                                <state key="normal" title="新竹市" backgroundImage="親子">
+                                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tourButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lRY-Oy-dWb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anZ-qW-dcK">
+                                                <rect key="frame" x="33" y="360" width="348" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="big-B2-3tK"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="jf-jinxuan-Medium" family="jf-jinxuan" pointSize="58"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
+                                                <state key="normal" title="臺中市" backgroundImage="公共">
+                                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tourButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wWV-AM-0Pf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJh-3s-cC6">
+                                                <rect key="frame" x="33" y="540" width="348" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="PIA-hW-svi"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="jf-jinxuan-Medium" family="jf-jinxuan" pointSize="58"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
+                                                <state key="normal" title="花蓮縣" backgroundImage="單車">
+                                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tourButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wTT-el-lkS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8kh-Mm-46f">
+                                                <rect key="frame" x="33" y="720" width="348" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="SkF-Jw-6Qs"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="jf-jinxuan-Medium" family="jf-jinxuan" pointSize="58"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
+                                                <state key="normal" title="新北市" backgroundImage="宗教">
+                                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tourButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bFr-Jk-Tlr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x8z-N5-njC">
+                                                <rect key="frame" x="33" y="900" width="348" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="oQ7-xO-0S7"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="jf-jinxuan-Medium" family="jf-jinxuan" pointSize="58"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
+                                                <state key="normal" title="南投縣" backgroundImage="戶外">
+                                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tourButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GSx-xJ-B8g"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jrR-bg-MHW">
+                                                <rect key="frame" x="33" y="1080" width="348" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="7UG-XL-MXK"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="jf-jinxuan-Medium" family="jf-jinxuan" pointSize="58"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
+                                                <state key="normal" title="臺南市" backgroundImage="歷史">
+                                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tourButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hAV-M4-6Ge"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdx-NM-T0x">
+                                                <rect key="frame" x="33" y="1260" width="348" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="Uyz-Zq-nYX"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="jf-jinxuan-Medium" family="jf-jinxuan" pointSize="58"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
+                                                <state key="normal" title="宜蘭縣" backgroundImage="溫泉">
+                                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tourButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MF1-h8-hQr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3QV-Bt-5L1">
+                                                <rect key="frame" x="33" y="1440" width="348" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="r59-db-BaM"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="jf-jinxuan-Medium" family="jf-jinxuan" pointSize="58"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
+                                                <state key="normal" title="嘉義市" backgroundImage="藝文館所">
+                                                    <color key="titleColor" systemColor="systemYellowColor"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tourButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d6o-WS-Rwh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstItem="NH3-vA-vcw" firstAttribute="trailing" secondItem="y5x-Su-NGA" secondAttribute="trailing" id="Glc-7N-VXg"/>
+                                    <constraint firstItem="NH3-vA-vcw" firstAttribute="width" secondItem="7GE-wI-cDT" secondAttribute="width" id="LP8-as-aaH"/>
+                                    <constraint firstItem="NH3-vA-vcw" firstAttribute="bottom" secondItem="y5x-Su-NGA" secondAttribute="bottom" constant="20" id="oHn-Wg-fBZ"/>
+                                    <constraint firstItem="NH3-vA-vcw" firstAttribute="leading" secondItem="y5x-Su-NGA" secondAttribute="leading" id="vTp-Vz-FAo"/>
+                                    <constraint firstItem="NH3-vA-vcw" firstAttribute="top" secondItem="y5x-Su-NGA" secondAttribute="top" constant="20" id="vYx-yh-cVJ"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="y5x-Su-NGA"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="7GE-wI-cDT"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <constraints>
+                            <constraint firstItem="2Qc-uV-uka" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="A3H-hL-qqs"/>
+                            <constraint firstItem="Dpw-Wr-4Kd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="L0T-40-DCR"/>
+                            <constraint firstItem="2Qc-uV-uka" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Xb2-NC-TNs"/>
+                            <constraint firstItem="2Qc-uV-uka" firstAttribute="top" secondItem="Dpw-Wr-4Kd" secondAttribute="bottom" id="Z1i-xC-cpb"/>
+                            <constraint firstItem="Dpw-Wr-4Kd" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="deZ-cj-Wac"/>
+                            <constraint firstAttribute="bottom" secondItem="2Qc-uV-uka" secondAttribute="bottom" id="e0O-Ie-dHP"/>
+                            <constraint firstItem="Dpw-Wr-4Kd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="jtJ-oU-mEg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gAk-zZ-Eut"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957.9710144927537" y="-2.0089285714285712"/>
+        </scene>
+        <!--台北旅遊網-->
+        <scene sceneID="qfh-n3-5Pz">
+            <objects>
+                <viewController id="RwR-mB-Dl4" customClass="WebViewController" customModule="TourRandom" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="234-rT-RqW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WMs-4K-zFh">
+                                <rect key="frame" x="0.0" y="44" width="414" height="692"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZKA-Sz-Bdj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZKA-Sz-Bdj" firstAttribute="bottom" secondItem="WMs-4K-zFh" secondAttribute="bottom" id="MrP-Zm-WHS"/>
+                            <constraint firstItem="ZKA-Sz-Bdj" firstAttribute="trailing" secondItem="WMs-4K-zFh" secondAttribute="trailing" id="NJV-na-9D3"/>
+                            <constraint firstItem="WMs-4K-zFh" firstAttribute="leading" secondItem="ZKA-Sz-Bdj" secondAttribute="leading" id="aIR-Xc-95g"/>
+                            <constraint firstItem="WMs-4K-zFh" firstAttribute="top" secondItem="ZKA-Sz-Bdj" secondAttribute="top" id="wgD-bd-0Ri"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="台北旅遊網" id="mRZ-GR-WLT"/>
+                    <connections>
+                        <outlet property="webView" destination="WMs-4K-zFh" id="TzL-ku-IrC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8CN-bI-We7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2757.971014492754" y="-4.0178571428571423"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="odE-i2-O2R">
+            <objects>
+                <viewController storyboardIdentifier="detailVC" id="oMa-aL-D58" customClass="DetailViewController" customModule="TourRandom" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a4x-bu-nGj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="exb-T5-LfB">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem title="請稍等" id="syB-VF-clR"/>
+                                </items>
+                                <navigationBarAppearance key="standardAppearance">
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </navigationBarAppearance>
+                                <navigationBarAppearance key="scrollEdgeAppearance">
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <textAttributes key="titleTextAttributes"/>
+                                </navigationBarAppearance>
+                            </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="52t-O3-vQB">
+                                <rect key="frame" x="0.0" y="44" width="414" height="280"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="M38-hI-9gz"/>
+                                </constraints>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="請稍等" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="y7t-bb-Nt9">
+                                <rect key="frame" x="0.0" y="324" width="414" height="341"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="jf-jinxuanlatte-1.0-medium" family="jf-jinxuanlatte-1.0" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="請稍等" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dxe-Tr-65C">
+                                <rect key="frame" x="0.0" y="667" width="414" height="69"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="jf-jinxuan-Medium" family="jf-jinxuan" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KGh-Kn-tYu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="52t-O3-vQB" firstAttribute="top" secondItem="exb-T5-LfB" secondAttribute="bottom" id="348-H8-y1N"/>
+                            <constraint firstItem="exb-T5-LfB" firstAttribute="centerX" secondItem="52t-O3-vQB" secondAttribute="centerX" id="Fks-lQ-rHo"/>
+                            <constraint firstItem="dxe-Tr-65C" firstAttribute="bottom" secondItem="KGh-Kn-tYu" secondAttribute="bottom" id="NDQ-fD-1DM"/>
+                            <constraint firstItem="dxe-Tr-65C" firstAttribute="top" secondItem="y7t-bb-Nt9" secondAttribute="bottom" constant="2" id="Ruo-Df-XDx"/>
+                            <constraint firstItem="KGh-Kn-tYu" firstAttribute="trailing" secondItem="y7t-bb-Nt9" secondAttribute="trailing" id="WEQ-Mc-4jr"/>
+                            <constraint firstItem="exb-T5-LfB" firstAttribute="top" secondItem="KGh-Kn-tYu" secondAttribute="top" id="b0m-s4-Pmd"/>
+                            <constraint firstItem="dxe-Tr-65C" firstAttribute="trailing" secondItem="KGh-Kn-tYu" secondAttribute="trailing" id="ezB-63-0rh"/>
+                            <constraint firstItem="52t-O3-vQB" firstAttribute="leading" secondItem="KGh-Kn-tYu" secondAttribute="leading" id="f2m-EX-b8n"/>
+                            <constraint firstItem="dxe-Tr-65C" firstAttribute="leading" secondItem="KGh-Kn-tYu" secondAttribute="leading" id="itd-ZP-6Nq"/>
+                            <constraint firstItem="KGh-Kn-tYu" firstAttribute="bottom" secondItem="y7t-bb-Nt9" secondAttribute="bottom" constant="71" id="mQw-sd-eUC"/>
+                            <constraint firstItem="y7t-bb-Nt9" firstAttribute="top" secondItem="52t-O3-vQB" secondAttribute="bottom" id="mvo-we-Jib"/>
+                            <constraint firstItem="52t-O3-vQB" firstAttribute="centerX" secondItem="a4x-bu-nGj" secondAttribute="centerX" id="nCs-Uq-qgw"/>
+                            <constraint firstItem="52t-O3-vQB" firstAttribute="trailing" secondItem="KGh-Kn-tYu" secondAttribute="trailing" id="nTL-SB-oTB"/>
+                            <constraint firstItem="exb-T5-LfB" firstAttribute="leading" secondItem="52t-O3-vQB" secondAttribute="leading" id="oU9-yv-OBp"/>
+                            <constraint firstItem="y7t-bb-Nt9" firstAttribute="leading" secondItem="KGh-Kn-tYu" secondAttribute="leading" id="vHb-fd-XmZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="52t-O3-vQB" id="P5e-Dk-JSe"/>
+                        <outlet property="naviTitle" destination="exb-T5-LfB" id="tgC-hg-H0m"/>
+                        <outlet property="textView" destination="y7t-bb-Nt9" id="EGh-TH-uqL"/>
+                        <outlet property="textView2" destination="dxe-Tr-65C" id="HF8-l3-3vR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mQ1-cQ-RoH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3689.8550724637685" y="-4.0178571428571423"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ry4-pn-MEM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7hg-qv-ynb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="arw-Up-mgP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" systemColor="systemTealColor"/>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" systemColor="systemTealColor"/>
+                        </navigationBarAppearance>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="27x-ku-M1Y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uha-ol-X8k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1201" y="-212"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="101" width="348" height="140"/>
+        <image name="taipeiLogo" width="68" height="73"/>
+        <image name="公共" width="348" height="140"/>
+        <image name="單車" width="348" height="140"/>
+        <image name="宗教" width="348" height="140"/>
+        <image name="戶外" width="348" height="140"/>
+        <image name="歷史" width="348" height="140"/>
+        <image name="溫泉" width="348" height="140"/>
+        <image name="藝文館所" width="348" height="140"/>
+        <image name="親子" width="348" height="140"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
