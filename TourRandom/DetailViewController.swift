@@ -50,7 +50,7 @@ class DetailViewController: UIViewController {
         
     }
     
-   // self.navigationController?.topViewController?.title = "請稍等"
+   // self.navigationController?.topViewController?.title = "請稍等" 為啥不能擺這
     
     func getData (){
         
