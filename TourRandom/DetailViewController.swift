@@ -13,7 +13,7 @@ class DetailViewController: UIViewController {
     
     var cate = ""
     var viewsArray =  [taiwanTourViews.Tourviews.views.view]()
-    @IBOutlet weak var naviTitle: UINavigationBar!
+    //@IBOutlet weak var naviTitle: UINavigationBar!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var textView2: UITextView!
@@ -46,11 +46,11 @@ class DetailViewController: UIViewController {
         getData()
         
         
-        
+    self.navigationController?.topViewController?.title = "請稍等"
         
     }
     
-    
+   // self.navigationController?.topViewController?.title = "請稍等"
     
     func getData (){
         
@@ -78,7 +78,7 @@ class DetailViewController: UIViewController {
                 DispatchQueue.main.async {
                     let randomNum = Int(arc4random_uniform(UInt32(self.viewsArray.count)))
                     let vi = self.viewsArray[randomNum]
-                    self.naviTitle.topItem?.title = vi.Name
+                    self.navigationController?.topViewController?.title = vi.Name
                     self.textView.text = vi.Toldescribe
                     self.textView2.text = vi.Add
                     
