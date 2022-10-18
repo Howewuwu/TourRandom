@@ -50,7 +50,7 @@ class DetailViewController: UIViewController {
         
     }
     
-   // self.navigationController?.topViewController?.title = "請稍等"loadinglllllllllllllllllllllll到底要不要讓我 comiit & push????
+   // self.navigationController?.topViewController?.title = "請稍等"     到底要不要讓我 comiit & push????
     
     func getData (){
         
