@@ -50,7 +50,7 @@ class DetailViewController: UIViewController {
         
     }
     
-   // self.navigationController?.topViewController?.title = "請稍等"     到底要不要讓我 comiit & push????
+   
     
     func getData (){
         
@@ -79,9 +79,9 @@ class DetailViewController: UIViewController {
                     let randomNum = Int(arc4random_uniform(UInt32(self.viewsArray.count)))
                     let vi = self.viewsArray[randomNum]
                     self.navigationController?.topViewController?.title = vi.Name
+                    //self.title = vi.Name
                     self.textView.text = vi.Toldescribe
                     self.textView2.text = vi.Add
-                    
                     let location = CLLocation(latitude: (vi.Py)!, longitude: (vi.Px)!)
                     self.centerMapOnLocation(location: location)
                     let pin = MKPointAnnotation()
