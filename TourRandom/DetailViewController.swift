@@ -50,7 +50,7 @@ class DetailViewController: UIViewController {
         
     }
     
-   // self.navigationController?.topViewController?.title = "請稍等"loading
+   // self.navigationController?.topViewController?.title = "請稍等"loadinglllllllllllllllllllllll
     
     func getData (){
         
