@@ -51,6 +51,21 @@ class ViewController: UIViewController {
     }
 
     
+    @IBAction func randomBtn(_ sender:UIButton){
+        let viewArray = ["臺北市","臺中市","高雄市","新北市","基隆市","宜蘭縣","花蓮縣","新竹市","苗栗縣","南投縣","臺南市","嘉義市","臺東縣","桃園市","屏東縣","彰化縣","雲林縣","新竹縣"]
+        let randomInt = Int.random(in: 0...12)
+        let randomDecide = viewArray[randomInt]
+        
+        let detialVC = storyboard?.instantiateViewController(withIdentifier: "detailVC")as! DetailViewController
+       
+        detialVC.cate = randomDecide
+        navigationController?.pushViewController(detialVC, animated: true )
+    }
+    
+    
+    
+    
+    
     }
 
 // 蘋果預設的網路安全須開啟允許才能設置 API，  需在 info 增加一個 Row (右鍵彈出視窗) 名為 App Transport Security Settings 然再增加子選項 Allow Arbitrary Loads 接著 Value 設為 YES，但這不是比較好的做法，較好的作法為子選項選取 Exception 那個，但之後再說吧.

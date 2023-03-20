@@ -42,11 +42,12 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         print(cate)
+        
         getData()
         
-        
-    self.navigationController?.topViewController?.title = "請稍等"
+        self.navigationController?.topViewController?.title = "請稍等"
         
     }
     
@@ -55,7 +56,7 @@ class DetailViewController: UIViewController {
     func getData (){
         
         // 藉由 URL 去該網頁獲取資料
-        let url = URL(string: "https://gis.taiwan.net.tw/XMLReleaseALL_public/scenic_spot_C_f.json")
+        let url = URL(string: "https://media.taiwan.net.tw/XMLReleaseALL_public/scenic_spot_C_f.json")
         
         // 網址資料獲取用 URLSession.shared.dataTask(with: )，獲取到後用 closure {(data,reponse,error) in}.resume() 這個大 closure 去執行要做的事
         // data,reponse,error 是預設的動作（參數），所以不用給 type，in 就是在“什麼“裡面（就 closure ）。
@@ -81,20 +82,19 @@ class DetailViewController: UIViewController {
                         
                         if self.cate == view.Region {
                             self.viewsArray.append(view) // 但還不明白為何都要加 self.
-                     }
-                    }
-                    
-
-                   }
-                // DispathQueue 需在 do {} 的外面執行，老師是說因為它是一個 Closure 的關係，但我還不懂。
+                            
+                  }
+                 }
+                }
+                // DispathQueue 需在外面執行，老師是說因為它是一個 Closure 的關係，但我聽不是很懂。
                 // 將內容放在畫面上是運用 DispathQueue
                 // 需在多研究 DispathQueue 相關資訊 / async&await ❗️❗️❗️❗️
                 DispatchQueue.main.async {
                     // 利用 arc4random_uniform 產生一個隨機變數，.count 指的是 viewArray 裡所有資料的總數量。
                     // arc4random_uniform 只能用 UInt32 辨識，所以用它來包裹著 (self.viewArray.count).
-                    // 但因為下一行 let vi = self.viewArray[randomNum] 只能用 Int，所以再用 Int 包裹。
+                    // 但因為下一行 let vi = self.viewArray[randomNum]，self.viewArray[randomNum] 只能用 Int，所以 arc4random_uniform(UInt32(self.viewsArray.count)) 再用 Int 包裹。
                     let randomNum = Int(arc4random_uniform(UInt32(self.viewsArray.count)))
-                    let vi = self.viewsArray[randomNum] // 一個 Array [數字] → Array 裡的第”幾“個 資料
+                    let vi = self.viewsArray [randomNum] // 一個 Array [數字] → Array 裡的第”幾“個 資料
                     self.navigationController?.topViewController?.title = vi.Name // 將名稱顯示在 navigationBar title 上
                     //self.title = vi.Name
                     self.textView.text = vi.Toldescribe // 將內容顯示在 textView 上
@@ -105,7 +105,7 @@ class DetailViewController: UIViewController {
                     pin.coordinate = location.coordinate // 將從資料獲取的座標帶給要產生的地圖標示
                     self.mapView.addAnnotation(pin) // 確定讓地圖標示出現 
                 }
-                
+             // catch let jsonError { print(jsonError) } 這段目前看起來似乎是固定用法，只用 Error 好像也可以？
             }catch let jsonError {
                 print(jsonError)
             }
